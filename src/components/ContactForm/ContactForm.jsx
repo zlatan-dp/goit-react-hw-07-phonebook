@@ -1,6 +1,6 @@
-import { nanoid } from '@reduxjs/toolkit';
+// import { nanoid } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/contactsSlice';
+// import { addContact } from 'redux/contactsSlice';
 import { getContacts } from 'redux/selectors';
 import {
   AddBtn,
@@ -8,6 +8,7 @@ import {
   ContactFormLabel,
   ContactFormWrap,
 } from './ContactForm.styled';
+import { addContact } from 'redux/operations';
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
@@ -28,7 +29,6 @@ export const ContactForm = () => {
     };
 
     const newContact = {
-      id: nanoid(),
       name,
       number,
     };
@@ -47,7 +47,6 @@ export const ContactForm = () => {
         <ContactFormInput
           type="text"
           name="name"
-          // value={name}
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required

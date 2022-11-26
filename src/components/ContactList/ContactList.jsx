@@ -19,9 +19,9 @@ export const ContactList = () => {
 
   return (
     <ul>
-      {filteredContacts.map(({ id, name, number }) => (
+      {filteredContacts.map(({ id, name, phone }) => (
         <ContactItemStyle key={id}>
-          <ContactItem name={name} number={number} id={id} />
+          <ContactItem name={name} number={phone} id={id} />
         </ContactItemStyle>
       ))}
     </ul>
